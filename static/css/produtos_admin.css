@@ -1,0 +1,422 @@
+/*
+body{
+    background-image: url('../img/bg.png'); 
+    background-repeat: repeat;
+}
+*/
+.container2{
+    height:70vh;
+    width: 100%;
+}
+
+.nav-item{
+    font-size: 18px;
+    color: #fff;
+    border: solid 1px white;
+    margin: 3px;
+    border-radius: 3px;
+}
+
+.nav-item:hover{
+    font-size: 18px;
+    color: #fff;
+    background-color: #889250;
+    border-bottom: 1px rgb(199, 194, 194) solid;
+}
+
+
+.text-white{
+    font-size: 20px;
+}
+
+
+.bg_navbar{
+    background-color: #0c5c44;
+}
+header{
+    padding-bottom: 100px;
+}
+
+.font_logo{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    display: inline;
+}
+
+.card_imovel{
+    background: linear-gradient(45deg, #a6a8a8, #b2f8e3);
+    margin-top: 5px;
+    border-radius: 26px;
+    max-width: 250px;
+    height: 370px;
+    align-items: center;
+}
+.card_imovel:hover{
+    background: linear-gradient(45deg, #8e8f8f, #c9f5e8);
+	transform: scale(1.0); 
+    box-shadow: 0 2px 15px rgba(14, 204, 55, 0.6);
+	text-decoration: none;
+}
+
+.img_capa_imovel{
+    width: 250px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 200px;
+    min-height: 200px;
+
+}
+
+.img-nav{
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    margin-left: 80px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.opcoes-nav{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    color: white;
+    display: inline;
+    
+}
+.opcoes-nav:hover, .font_logo:hover{
+    border-bottom: solid 2px rgba(8, 58, 43);
+    
+}
+
+
+.informacoes_imoveis{
+    padding: 20px;
+    color: white;
+}
+
+.valor{
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+
+.btn_filtrar{
+    border: none;
+    background-color: transparent;
+    border: 2px solid #30CD9E;
+    color: #30CD9E;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.btn_filtrar:hover{
+    background: linear-gradient(50deg, #35ecb5, #006d6e);
+    color: white;
+}
+
+
+.titulo_filtrar{
+    color:#30CD9E;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn_filtrar_modal{
+    border: none;
+    color: white;
+    background-color: #1b8f6c;
+    font-weight: bold;
+    padding: 5px;
+    margin: -2px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 88px;
+}
+
+.btn_filtrar_modal:hover{
+    background-color: #06503a;
+}
+
+.btn-concluir{
+    border: none;
+    color: white;
+    background-color: #1b8f6c;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 70%;
+}
+.btn-concluir:hover{
+    background-color: #06503a;
+}
+
+
+.a_none{
+
+    color: white;
+}
+
+.a_none:hover{
+    text-decoration: none;
+    color: white;
+}
+
+/* INICIO DAS INFORMACOES DO SORTEIO ============================== */
+.titulo_especificacao{
+    color: #30CD9E;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.especificacao{
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+.especificacao_descricao{
+    font-size: 20px;
+    color: #fff;
+}
+
+.btn_agendar_contato{
+    border: none;
+    background-color: #30CD9E;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+
+}
+.btn_especificacao{
+    border: none;
+    background-color: #db9b10;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btn_especificacao:hover{
+    background-color: #cc900e;
+    text-decoration: none;
+    color: white;
+}
+.btn_especificacao2{
+    border: none;
+    background-color: #3d3c38;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.btn_especificacao2:hover{
+    background-color: #31312e;
+    text-decoration: none;
+    color: white;
+}
+
+.btn_especificacao3{
+    border: none;
+    background-color: #4d60cc;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.btn_especificacao3:hover{
+    background-color: #4456bd;
+    text-decoration: none;
+    color: white;
+}
+
+.btn_especificacao4{
+    border: none;
+    background-color: #51833a;
+    color: white;
+    font-weight: bold;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.btn_especificacao4:hover{
+    background-color: #446e31;
+    text-decoration: none;
+    color: white;
+}
+
+.btn_meunumero{
+    border: none;
+    background-color: #298b15;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 400px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.btn_meunumero:hover{
+    background-color: #227512;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* FIM DOS BOTOES DE INFORMACOES DOS NUMEROC OMPRADOS ==========================*/
+
+/* IMAGENS DO MENU PRINCIPAL ==========================*/
+.holder {
+    display: flex;
+    justify-content: center;
+}
+.imagem {
+  width: 200px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+.imagem::after {
+  content: attr(data-title); /* estilo que coloco a legenda no lugar */
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  left: 0;
+}
+
+
+/* ====================================================*/
+.div_possivel_interesse{
+    text-align: center;
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_agendar{
+    border: none;
+    background-color: #30CD9E;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 300px;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btn_agendar:hover{
+    background-color: #209b76;
+    text-decoration: none;
+    color: white;
+}
+
+.rodape{
+    margin-top: 30px;
+    padding: 15px 100px 30px 100px;
+    background: #138664;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.opcoes-rodape{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+.opcoes-rodape:hover{
+    color: #e6dede;
+    text-decoration: none;
+}
+
+.links{
+    width: 100%;
+    padding: 2px 25px 5px 5px;
+    height: 35px;
+    background: #030000e0;
+    align-items: center;
+    text-align: right;
+}
+
+.img-links{
+    width: 30px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/* Tipografia
+-----------------------------*/
+h1 {
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
+	color: white;
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+	.btn-custom {
+		margin: 10px 15px;
+		font-size: 1em;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	h1 {
+		font-size: 3em;
+	}
+	.btn-custom {
+		margin: 10px 15px;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	h1 {
+		font-size: 4em;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	h1 {
+		font-size: 5em;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 6em;
+	}
+}

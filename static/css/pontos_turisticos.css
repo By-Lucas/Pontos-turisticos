@@ -1,0 +1,242 @@
+:root {
+    --bg-primary: #151515;
+    --bg-second: rgba(24, 24, 24,70);
+    --primary: linear-gradient(#44D374, #32F484);
+    --second: #fff;
+    --terciary: #32F484;
+    --html-color: #FF6D00;
+    --css-color: #039BE5;
+    --js-color: #FFD600;
+    --flutter-color: #40C4FF;
+
+}
+
+
+/* Section Projetos */
+
+
+#projetos {
+    display: inline-block;
+    justify-content: center;
+}
+
+
+.projetos {
+    display: inline-block;
+    margin: 15px;
+    width: auto;
+    justify-content: center;
+    
+}
+
+
+.caixa-produto{
+    background: linear-gradient(45deg, #d1e0e0, #a4f3db);
+    border: 1px solid rgb(78, 78, 78);
+    border-bottom: 4px rgb(151, 34, 187) solid;
+    box-shadow: 0px 2px 15px #6d6d6d;
+    border-radius: 10px;
+    margin: 0px 20px  10px;
+}
+
+.titulo-caixa{
+    align-items: center;
+    padding: 3px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.card_imovel{
+    background: linear-gradient(45deg, #a6a8a8, #b2f8e3);
+    margin-top: 5px;
+    border-radius: 26px;
+    max-width: 250px;
+    max-height: 400px;
+    box-shadow: 0px 2px 15px #6d6d6d;
+    align-items: center;
+}
+.card_imovel:hover{
+    background: linear-gradient(45deg, #8e8f8f, #c9f5e8);
+	transform: scale(1.0); 
+    box-shadow: 0 2px 15px rgba(14, 204, 55, 0.6);
+	text-decoration: none;
+
+}
+
+.img_capa_imovel{
+    width: 250px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+
+.informacoes_imoveis{
+    padding: 20px;
+    color: white;
+}
+
+
+.projetos-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.projetos-card {
+    border-radius: 15px;
+    flex: 1;
+    background-color: var(--bg-second);
+    margin: 10px;
+    justify-content: center;
+    overflow: hidden;
+    border: #151515 solid 3px;
+}
+
+.projetos-card img{
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+
+.projeto-card-desc {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    margin-bottom: 5px;
+    padding: 10px 0px 10px 10px;
+    
+}
+
+.icone{
+    font-size: 2.0rem;
+    cursor: pointer;
+    color: green;
+    float: right;
+    margin-top: 10px;
+}
+.icone:hover{
+    color: var(--html-color);
+}
+
+.projeto-card-desc-direita-icons a:hover{
+    color: var(--html-color);
+}
+
+.projeto-card-desc-esquerda {
+    flex: 1;
+    width: 100%;
+    
+}
+
+
+.projeto-card-desc-categoria.html {
+    border: 2px solid var(--html-color);    
+    background-color: rgba(255, 111, 0, 0.25);
+}
+
+.projeto-card-desc-categoria.css {
+    border: 2px solid var(--css-color);    
+    background-color: rgba(3, 155, 229,0.25);
+}
+
+.projeto-card-desc-categoria.javascript {
+    border: 2px solid var(--js-color);    
+    background-color: rgba(255, 214, 0,0.25);
+}
+
+.projeto-card-desc-categoria.flutter {
+    border: 2px solid var(--flutter-color);    
+    background-color: rgba(64, 196, 255, 0.25);
+    
+}
+
+.botao_1{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #02812d;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 1rem;
+    text-align: center;
+    float: left;
+}
+.botao_1:hover{
+    text-decoration: none;
+    background: #006d24;
+    color: #ffffff;
+}
+/* VISIVEL ================================ */
+@media (max-width: 1112px) {
+
+    .banner-direita img {
+        width: 90%;
+    }
+
+    .banner-direita {
+        width: 90%;
+        justify-content: end;
+    }
+
+
+@media (max-width: 834px) {
+    
+
+    #projetos  {
+        padding: 0px 0px;
+    }
+
+    .banner-direita{
+        display: none;
+    }
+    .banner-esquerda {
+        text-align: center;
+    }
+    .sobre-mim-direita {
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    .sobre-mim-direita p {
+        max-width: 1000px;
+    }
+
+    .conhecimentos-cards {
+        flex-direction: column;
+    }
+
+    .projeto-card-desc {
+        display: block;
+    }
+
+    .projeto-card-desc p{
+        margin-top: 30px;
+    }
+
+    .banner-esquerda p{
+        margin: auto;
+    }
+
+    .icone-rolagem {
+        display: none;
+    }
+
+}
+
+@media (max-width: 414px) {
+
+    .projeto-card-desc {
+        display: block;
+    }
+
+    .projeto-card-desc p{
+        margin-top: 30px;
+    }
+
+}

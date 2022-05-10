@@ -1,0 +1,215 @@
+.coluna{
+	max-height: 500px;
+}
+
+.border_left{
+	background-color: #ffffff;
+	border-left: #2d5880 3px solid;
+	-webkit-box-shadow: 5px 3px 3px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    5px 3px 3px rgba(50, 50, 50, 0.77);
+	box-shadow:         2px 2px 20px rgba(50, 50, 50, 0.77);
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	align-items: center;
+}
+.coluna_tags{
+	align-items: center;
+	padding: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#azul-claro{
+	background: linear-gradient( to right, rgb(112, 77, 141), rgba(77, 118, 180, 0.507), rgb(227, 245, 146));
+	color: white;
+}
+#amarelo{
+	background:  linear-gradient( to right, rgb(231, 145, 15), rgba(114, 85, 22, 0.507));
+	color: white;
+}
+#preto-claro{
+	background: rgb(35, 40, 41);
+	color: #ffffff;
+}
+
+#home{
+	background: #cc7c05;
+	color: white;
+}
+
+#home a{
+	color: #ffffff;
+}
+#home a:hover{
+	color: #cccbcb;
+}
+
+.caixa {
+	padding: 60px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+footer p a {
+	margin: 5px 15px;
+}
+
+.cor_nav{
+	color: #ffffff;
+}
+.cor_nav:hover{
+	color: #acaaaa;
+}
+
+/* ===================== BOTOES  E CORES===================== */
+.botao-slider{
+	background: rgb(52, 157, 255);
+	color: #ffffff;
+	border: #2b557c 2px solid;
+	font-size: 20px;
+	padding: 10px 15px;
+	text-align: center;
+	margin-bottom: 25px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.botao-slider:hover{
+	background-color: #cc7c05;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.carousel h3{
+	color: rgb(52, 157, 255);
+	margin-bottom: 10px;
+}
+
+.carousel-control-prev{
+	padding: 5px;
+	border: #ffffff 1px solid;
+	max-width: 40px;
+	align-items: center;
+	margin-top: 150px;
+	height: 80px;
+	border-bottom-right-radius: 40px;
+	background: #666666;
+	border-top-right-radius: 40px;
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.carousel-control-next{
+	padding: 5px;
+	border: #ffffff 1px solid;
+	max-width: 40px;
+	align-items: center;
+	margin-top: 150px;
+	height: 80px;
+	border-bottom-left-radius: 40px;
+	background: #666666;
+	border-top-left-radius: 40px;
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.branco{
+	color: #ffffff
+}
+.branco:hover{
+	color: #ffffff
+}
+
+.btn_login{
+	background: transparent;
+	color: #ffffff;
+	border:#ffffff 1px solid;
+	border-radius: 18px;
+	text-align: center;
+}
+
+#home .btn_login:hover .btn_cadastrar:hover{
+	text-decoration: none;
+	color: #011e6b;
+	background-color: #ffffff;
+}
+
+.btn_cadastrar{
+	background: transparent;
+	color: #ffffff;
+	border:#ffffff 1px solid;
+	border-radius: 18px;
+	text-align: center;
+}
+
+.btn_sair{
+	background: transparent;
+	color: #ffffff;
+	border:#bb0000 1px solid;
+	border-radius: 18px;
+	text-align: center;
+}
+#home .btn_sair:hover{
+	color: #ffffff;
+	background-color: #f3acac;
+	cursor: pointer;
+}
+
+/* ===================== IMAGENS E VIDEOS ===================== */
+.tecnologia_principal{
+	margin: 15px;
+	background-color: #ffffff;
+	padding: 5px;
+	border-radius: 10px;
+	-webkit-box-shadow: 5px 3px 3px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    5px 3px 3px rgba(50, 50, 50, 0.77);
+	box-shadow:         5px 5px 20px rgba(50, 50, 50, 0.77);
+}
+.imagem_tecnologia{
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 5px;
+	-webkit-box-shadow: 5px 3px 3px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    5px 3px 3px rgba(50, 50, 50, 0.77);
+	box-shadow:         5px 5px 20px rgba(50, 50, 50, 0.77);
+}
+
+.image_menu{
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+/* Nome em 3D */
+.nome_3d{
+    color: #fff;
+    font-size: 45px;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: left;
+    text-shadow:  
+      1px -1px 0 #2f5d87, 
+      2px -2px 0 #2e5a83, 
+      3px -3px 0 #2d5880, 
+      4px -4px 0 #2b557c, 
+      5px -5px 4px rgba(0, 0, 0, 0.55), 
+      5px -5px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* BOTAO COM EFEITO */
+
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    opacity: 0;
+  }
+}
+/* ICONE MEXENDO */
+@keyframes bye {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(40deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(40deg);}
+    100% {transform: rotate(0deg);}
+}
