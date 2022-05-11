@@ -48,7 +48,7 @@
 }
 
 .card_imovel{
-    background: linear-gradient(45deg, #a6a8a8, #b2f8e3);
+    background: linear-gradient(45deg, #57ca66, #21a333);
     margin-top: 5px;
     border-radius: 26px;
     max-width: 250px;
@@ -57,7 +57,7 @@
     align-items: center;
 }
 .card_imovel:hover{
-    background: linear-gradient(45deg, #8e8f8f, #c9f5e8);
+    background: linear-gradient(45deg, #52c561, #20af33);
 	transform: scale(1.0); 
     box-shadow: 0 2px 15px rgba(14, 204, 55, 0.6);
 	text-decoration: none;

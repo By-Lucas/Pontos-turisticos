@@ -1,5 +1,6 @@
 from pathlib import Path
-import os, sys
+import os
+import sys
 from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,13 +30,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-sys.path.append(os.path.join(BASE_DIR, "apps"))
+#sys.path.append(os.path.join(BASE_DIR, "apps"))
 
 INSTALLED_APPS +=[
     'users',
     'plataforma',
 
-    'fontawesomefree'
+    'fontawesomefree',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

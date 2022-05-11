@@ -1,0 +1,50 @@
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/pontos_turisticos.css' %}">
+{% endblock %}
+<div class="container" style="display: flex; justify-content: center;">
+    <div class="row" >
+        {% for p_turistico in p_turisticos %}
+        <div class="col-sm" style="margin-bottom: 20px;">
+            <div class="card_imovel">
+                <a class="a_none" href="{% url 'index' %}">
+                    <img class="img_capa_imovel"  src="{{ p_turistico.img_capa.url }}">
+                </a>
+                <div class="informacoes_imoveis">
+                    <h5 id="texto-limite" class="valor">{{p_turistico.nome}}</h5>
+                    <h4> 
+                        {{p_turistico.status}}
+                    </h4>
+                    <div class="box">
+                        <a href="" class="btn btn-outline-primary">Editar</a>
+                        <a href="" class="btn btn-outline-danger">Deletar</a>
+                        <img width="10%" src="{% static 'css/admin/img/heart.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+  <div class="pagination">
+      <span class="step-links">
+          {% if todos_produtos.has_previous %}
+              <a href="?page=1">&laquo; Primeira</a> |
+              <a href="?page={{ todos_produtos.previous_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Anterio</a>
+          {% endif %}
+
+          <br>
+          <span class="current" style="color: black;">
+              Página {{ todos_produtos.number }} de {{ todos_produtos.paginator.num_pages }}.
+          </span>
+
+          {% if todos_produtos.has_next %}
+              <a href="?page={{ todos_produtos.next_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Próximo</a> |
+              <a href="?page={{ todos_produtos.paginator.num_pages }}"> Ultima &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
+</div>

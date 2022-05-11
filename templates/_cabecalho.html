@@ -43,10 +43,10 @@
                 <a href="" class="nav-link">Projetos</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Produtos</a><!--/precos-->
+                <a href="{% url 'profile' %}" class="nav-link"> Perfil</a><!--/precos-->
               </li>
               {% if user.is_authenticated %}
-                {% if request.user.groups.all.0.name == 'Admin' or request.user.groups.all.0.name == 'Dono' %}
+                {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Dono' %}
                 <li class="nav-item">
                   <a href="" class="nav-link">Meu menu</a>
                 </li>
@@ -61,11 +61,11 @@
               {% endif %}
 
               <li class="nav-item">
-                <a href="" class="btn btn_cadastrar ">Cadastre-se</a>
+                <a href="{% url 'register' %}" class="btn btn_cadastrar ">Cadastre-se</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                  <a href="" class="btn btn_sair">Sair</a>
+                  <a href="{% url 'logout' %}" class="btn btn_sair">Sair</a>
                 </li>
               {% else %}
                 <li class="nav-item">

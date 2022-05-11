@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="container">
+    <form method="POST" enctype='multipart/form-data'>
+        <div class="card-body p-0">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1> Atualizar informações do perfil</h1>
+                    {% csrf_token %}
+                    {{user_form | crispy}}
+                    {{profile_form | crispy}}
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3">
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Atualizar" />
+                </div>
+                <div class="col-lg-3">
+                    <a href="{% url 'profile' %}" class="btn btn-secondary btn-user btn-block">Cancelar</a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+{% endblock body %}

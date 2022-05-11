@@ -33,7 +33,7 @@
 }
 
 #home{
-	background: #cc7c05;
+	background: #0555cc;
 	color: white;
 }
 
@@ -83,30 +83,6 @@ footer p a {
 	margin-bottom: 10px;
 }
 
-.carousel-control-prev{
-	padding: 5px;
-	border: #ffffff 1px solid;
-	max-width: 40px;
-	align-items: center;
-	margin-top: 150px;
-	height: 80px;
-	border-bottom-right-radius: 40px;
-	background: #666666;
-	border-top-right-radius: 40px;
-	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-}
-.carousel-control-next{
-	padding: 5px;
-	border: #ffffff 1px solid;
-	max-width: 40px;
-	align-items: center;
-	margin-top: 150px;
-	height: 80px;
-	border-bottom-left-radius: 40px;
-	background: #666666;
-	border-top-left-radius: 40px;
-	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-}
 
 .branco{
 	color: #ffffff
