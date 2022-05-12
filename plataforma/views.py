@@ -25,21 +25,14 @@ def index(request):
     
     perfil = Profile.objects.all()
     p_turisticos = Pontos_turisticos.objects.all()
-    
-   
-    user = request.user
-    print(user)
 
-    #if user <= 18:
-    #    sugestoes = Pontos_turisticos.objects.filter(categoria=p_turisticos).exclude(id=id)[:4]
-    #elif user >= 18 and user <= 30:
-    #    sugestoes = Pontos_turisticos.objects.filter(categoria=p_turisticos).exclude(id=id)[:4]
-    #elif user >= 30:
-    #    sugestoes = Pontos_turisticos.objects.filter(categoria=p_turisticos).exclude(id=id)[:4]
+    usuario = request.user
+    print(usuario)
+
 
     context ={
         #'sugestoes': sugestoes,
         'p_turisticos':p_turisticos,
-        'user':user
+        'usuario':usuario
     }
     return render(request, 'index.html', context)
