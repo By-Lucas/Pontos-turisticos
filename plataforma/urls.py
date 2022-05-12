@@ -7,7 +7,10 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('login/', views.LoginView.as_view(), name='login'),
-    path('logout/', views.LogoutView.as_view(), name='logout')
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('cadastrar-ponto/', views.cadastrar_ponto_turistico, name='cadastrar'),
+    path('deletar-ponto/<int:id>/', views.deletar_ponto_turistico, name='deletar_ponto'),
+    path('editar-ponto/<int:id>/', views.editar_ponto_turistico, name='editar_ponto')
 ]
 
 if settings.DEBUG:

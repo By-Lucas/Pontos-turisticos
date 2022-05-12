@@ -45,7 +45,7 @@
                 </li>
                 {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Dono' %}
                   <li class="nav-item">
-                    <a href="" class="nav-link">Administração</a>
+                    <a href="{% url 'cadastrar' %}" class="nav-link">Administração</a>
                   </li>
                 {% else %}
                   <li class="nav-item">

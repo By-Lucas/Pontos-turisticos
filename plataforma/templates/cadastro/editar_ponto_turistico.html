@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+
+{% block body %}
+<div class="container">
+    <h1>Editar produto:</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <div class="row">
+            <div class="col-sm col-md-3">
+                <input type="submit" class="btn btn-block btn-outline-success" value="Salvar edição">
+            </div>
+            <div class="col-sm col-md-3">
+                <a href="{% url 'index' %}" class="btn btn-block btn-outline-primary">Voltar para Produtos</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
