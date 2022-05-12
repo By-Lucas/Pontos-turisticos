@@ -30,25 +30,3 @@
         {% endfor %}
     </div>
 </div>
-
-
-<div class="container">
-  <div class="pagination">
-      <span class="step-links">
-          {% if todos_produtos.has_previous %}
-              <a href="?page=1">&laquo; Primeira</a> |
-              <a href="?page={{ todos_produtos.previous_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Anterio</a>
-          {% endif %}
-
-          <br>
-          <span class="current" style="color: black;">
-              Página {{ todos_produtos.number }} de {{ todos_produtos.paginator.num_pages }}.
-          </span>
-
-          {% if todos_produtos.has_next %}
-              <a href="?page={{ todos_produtos.next_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Próximo</a> |
-              <a href="?page={{ todos_produtos.paginator.num_pages }}"> Ultima &raquo;</a>
-          {% endif %}
-      </span>
-  </div>
-</div>
