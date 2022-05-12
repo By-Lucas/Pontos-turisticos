@@ -4,6 +4,20 @@
 
 {% block body %}
 <div class="container" style="min-height: 80vh;">
+    <div style="align-items: center; display:flex; justify-content: center;">
+        {{ message }}
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class=" col-md-6 alert {{message.tags}} alert-dismissible fade show" style="display:flex; justify-content: center;">
+                    {{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <form method="POST">
         <div class="card-body p-0">
             <div class="row justify-content-center">

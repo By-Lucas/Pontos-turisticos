@@ -40,7 +40,7 @@ def cadastrar_ponto_turistico(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, constants.SUCCESS, 'Ponto turistico cadastrado com sucesso!')
-            return redirect(request, 'index')
+            return redirect('index')
         else:
             messages.add_message(request, constants.ERROR, 'Erro ao cadastrar Ponto turistico!')
             return redirect(request, 'cadastrar_pontos')
