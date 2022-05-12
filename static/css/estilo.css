@@ -49,9 +49,6 @@
 	border-bottom: 1px solid #e5e5e5;
 }
 
-footer p a {
-	margin: 5px 15px;
-}
 
 .cor_nav{
 	color: #ffffff;
@@ -59,6 +56,45 @@ footer p a {
 .cor_nav:hover{
 	color: #acaaaa;
 }
+
+
+/* Rodapé
+-----------------------------*/
+footer {
+	background: #0c5c44;
+	padding: 50px 0px 20px 0px;
+	position: relative;
+}
+
+footer h4 {
+	color: #919496;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+footer .navbar-nav a {
+	color: white;
+	font-size: 0.8em;
+}
+
+footer .navbar-nav a:hover {
+	color: #bbf8ed;
+	text-decoration: none;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer ul li {
+	float: right;
+	margin: 0 5px;
+}
+
+footer p a {
+	margin: 5px 15px;
+}
+
 
 /* ===================== BOTOES  E CORES===================== */
 .botao-slider{
@@ -149,6 +185,26 @@ footer p a {
 	margin-top: 40px;
 	margin-left: 40px;
 }
+
+.opcoes-rodape{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+.opcoes-rodape:hover{
+    color: #e6dede;
+    text-decoration: none;
+}
+
+.links{
+    width: 100%;
+    padding: 2px 25px 5px 5px;
+    height: 35px;
+    background: #030000e0;
+    align-items: center;
+    text-align: right;
+}
+
 
 /* Nome em 3D */
 .nome_3d{

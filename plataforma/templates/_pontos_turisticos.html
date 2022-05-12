@@ -3,30 +3,34 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/pontos_turisticos.css' %}">
 {% endblock %}
+
+
 <div class="container" style="display: flex; justify-content: center;">
     <div class="row" >
         {% for p_turistico in p_turisticos %}
-        <div class="col-sm" style="margin-bottom: 20px;">
-            <div class="card_imovel">
-                <a class="a_none" href="{% url 'index' %}">
-                    <img class="img_capa_imovel"  src="{{ p_turistico.img_capa.url }}">
-                </a>
-                <div class="informacoes_imoveis">
-                    <h5 id="texto-limite" class="valor">{{p_turistico.nome}}</h5>
-                    <h4> 
-                        {{p_turistico.status}}
-                    </h4>
-                    <div class="box">
-                        <a href="" class="btn btn-outline-primary">Editar</a>
-                        <a href="" class="btn btn-outline-danger">Deletar</a>
-                        <img width="10%" src="{% static 'css/admin/img/heart.png' %}">
+            <div class="col-sm" style="margin-bottom: 20px;">
+                <div class="card_imovel">
+                    <a class="a_none" href="{% url 'index' %}">
+                        <img class="img_capa_imovel"  src="{{ p_turistico.img_capa.url }}">
+                    </a>
+                    <div class="informacoes_imoveis">
+                        <h5 id="texto-limite" class="valor">{{p_turistico.nome}}</h5>
+                        <h4> 
+                            {{p_turistico.status}}
+                            {{p_turistico.categoria}}
+                        </h4>
+                        <div class="box">
+                            <a href="" class="btn btn-outline-primary">Editar</a>
+                            <a href="" class="btn btn-outline-danger">Deletar</a>
+                            <img width="10%" src="{% static 'css/admin/img/heart.png' %}">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
 </div>
+
 
 <div class="container">
   <div class="pagination">

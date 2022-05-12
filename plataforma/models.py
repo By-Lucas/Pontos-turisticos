@@ -5,7 +5,7 @@ from django.db import models
 class imagem_slider_ponto(models.Model):
     imagens = models.ImageField(upload_to='pontos-turisticos/', null=True, blank=True)
     def __str__(self) -> str:
-        return self.imagens
+        return self.imagens.url  
 
 # Create your models here.
 class Pontos_turisticos(models.Model):
@@ -15,7 +15,7 @@ class Pontos_turisticos(models.Model):
         ('R', 'Reforma'),
     )
     CATEGORIA_CHOICE = (
-        ('I', 'Adolescente'),
+        ('I', 'Infantil'),
         ('A', 'Adulto'),
         ('V', 'Idoso')
     )

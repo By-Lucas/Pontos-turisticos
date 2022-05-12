@@ -110,23 +110,81 @@
 
         <div class="row border_left">
             <div class=" coluna_tags col-sm ">
-                <h5>Informações / Compras</h5>
-                <p style="margin-top: -5px;">Da forma que desejar</p>
+                <h2>Diversão</h2>
             </div>
             <div class="coluna_tags col-sm">
-                <h5><a href="" class="btn btn-outline-success"><i class="fa-regular fa-credit-card"></i></a> 
-                    Até 12 vezes no cartão </h5>
+                <h2>Conforto</h2>
             </div>
             <div class="coluna_tags col-sm">
-                <h5><a href="" class="btn btn-outline-success"><i class="fab fa-telegram "></i></a> Pagamento no boleto</h5>
+                <h2>Aventura</h2>
             </div>
             <div class="coluna_tags col-sm">
-                <h5><a href="" class="btn btn-outline-success"><i class="fa-brands fa-pix"></i></a> Via Pix</h5>
+                <h2>Todas as idades</h2>
             </div>
         </div>
     </div>
 </section>
+{% if request.user.is_authenticated %}
+    {% if user.profile.idade >= 30 %}
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="row" >
+            {% include 'turisticos_idosos.html' %}
+            {% include 'turisticos_adulto.html' %}
+            {% include 'turisticos_infantil.html' %}
+            </div>
+        </div>
+    {% elif user.profile.idade > 18 and user.profile.idade < 30 %}
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="row" >
+                {% include 'turisticos_adulto.html' %}
+                {% include 'turisticos_idosos.html' %}
+                {% include 'turisticos_infantil.html' %}
+            </div>
+        </div>
+    {% elif user.profile.idade < 18 %}
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="row" >
+                {% include 'turisticos_infantil.html' %}
+                {% include 'turisticos_adulto.html' %}
+                {% include 'turisticos_idosos.html' %}
+            </div>
+        </div>
+    {% else %}
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="row" >
+                {% include '_pontos_turisticos.html' %}
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+<div class="container" style="display: flex; justify-content: center;">
+    <div class="row" >
+        {% include '_pontos_turisticos.html' %}
+    </div>
+</div>
+{% endif %}
 
-{% include '_pontos_turisticos.html' %}
+
+<div class="container">
+    <div class="pagination">
+        <span class="step-links">
+            {% if todos_produtos.has_previous %}
+                <a href="?page=1">&laquo; Primeira</a> |
+                <a href="?page={{ todos_produtos.previous_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Anterio</a>
+            {% endif %}
+  
+            <br>
+            <span class="current" style="color: black;">
+                Página {{ todos_produtos.number }} de {{ todos_produtos.paginator.num_pages }}.
+            </span>
+  
+            {% if todos_produtos.has_next %}
+                <a href="?page={{ todos_produtos.next_page_number }}&q={% if  request.GET.q %}{{ request.GET.q }}{% endif %}">Próximo</a> |
+                <a href="?page={{ todos_produtos.paginator.num_pages }}"> Ultima &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+  </div>
+  
 
 {% endblock %}

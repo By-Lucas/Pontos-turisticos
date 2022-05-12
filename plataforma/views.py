@@ -13,7 +13,7 @@ from users.models import Profile
 
 class LoginView(auth_views.LoginView):
     template_name = 'login.html'
-    next_page = 'profile_update'
+    next_page = 'profile'
     def get(self, request):
         return render(request, self.template_name, {'form': AuthenticationForm})
 
@@ -26,9 +26,9 @@ def index(request):
     perfil = Profile.objects.all()
     p_turisticos = Pontos_turisticos.objects.all()
     
-    if request.user.is_authenticated:
-        user = request.user.profile.idade
-        print(user)
+   
+    user = request.user
+    print(user)
 
     #if user <= 18:
     #    sugestoes = Pontos_turisticos.objects.filter(categoria=p_turisticos).exclude(id=id)[:4]
@@ -39,6 +39,7 @@ def index(request):
 
     context ={
         #'sugestoes': sugestoes,
-        'p_turisticos':p_turisticos
+        'p_turisticos':p_turisticos,
+        'user':user
     }
     return render(request, 'index.html', context)
