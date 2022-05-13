@@ -9,7 +9,7 @@
         {% if p_turistico.categoria == 'I'  %}
             <div class="col-sm" style="margin-bottom: 20px;">
                 <div class="card_imovel">
-                    <a class="a_none" href="{% url 'index' %}">
+                    <a class="a_none" href="{% url 'ponto_turistico' p_turistico.id %}">
                         <img class="img_capa_imovel"  src="{{ p_turistico.img_capa.url }}">
                     </a>
                     <div class="informacoes_imoveis">
@@ -20,11 +20,11 @@
                                     <a href="{% url 'editar_ponto' p_turistico.id %}" style="font-size:18px; width: 40%; margin: 6px; border-radius: 10px;" class="btn btn-primary">Editar</a>
                                     <a href="{% url 'deletar_ponto' p_turistico.id %}" style="font-size:18px; width: 40%; margin: 6px; border-radius: 10px;" class="btn btn-danger">Deletar</a>
                                 {% else %}
-                                    <a href="{% url 'editar_ponto' p_turistico.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
+                                    <a href="{% url 'ponto_turistico' p_turistico.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
                                     class="btn btn-primary">Ver ponto turistico</a>
                                 {% endif %}
                                 {% else %}
-                                <a href="{% url 'editar_ponto' p_turistico.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
+                                <a href="{% url 'ponto_turistico' p_turistico.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
                                 class="btn btn-primary">Ver ponto turistico</a>
                             {% endif %}
                         </div>

@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
-# Formulario de cadastro do usuario
+# ABAIXO FICA TODO OS FORMULARIO PUXADO DA models, E ISSO É RENDERIZADO NO HTML ATRAVEZ DA VIEWS
+
+
 class UserForm(forms.ModelForm):
     class Meta:
         model = User

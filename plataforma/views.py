@@ -73,3 +73,16 @@ def editar_ponto_turistico(request, id=None):
             messages.add_message(request, constants.ERROR, "Erro ao editar Ponto turistico")
             return redirect('index')
     return render(request, 'cadastro/editar_ponto_turistico.html', {'form':form})
+
+def ponto_turistico(request, id):
+    ponto_turistico = get_object_or_404(Pontos_turisticos, id=id)
+
+    # SUGESTÃO PARA O USUÁRIO, É SÓ ALTERA (categoria=ponto_turistico.categoria) POR (status=ponto_turistico.status)
+    # PARA ODER MOSTRAR ALEATORIAMENTE
+    sugestoes = Pontos_turisticos.objects.filter(categoria=ponto_turistico.categoria).exclude(id=id)[:4]
+    context ={
+        'ponto_turistico': ponto_turistico, 
+        'sugestoes': sugestoes, 
+        'id': id
+    }
+    return render(request, 'ponto_turistico_id.html', context)

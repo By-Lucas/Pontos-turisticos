@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
 #sys.path.append(os.path.join(BASE_DIR, "apps"))
 
+# TODA APLICAÇÃO INSTALADA E CRIADA NO DJANGO É ADCIONADA ASSIM
 INSTALLED_APPS +=[
     'users',
     'plataforma',
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'pontos_turisticos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # COLOCA A PASTA TEMPLATE COMO PAGINA PRINCIPAL PARA HTML
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,16 +116,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#USADO PARA UTILIZAR ENVIO DE AMAILS
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-
+# ARQUIVOS ESTATICOS
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# PAGINAPARA SALVAR MIDIAS
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 

@@ -37,12 +37,17 @@
                                 <p><strong>Endereço: </strong> {{user.profile.endereco}} </p>
                                 <p><strong>Cadastrado em: </strong> {{user.profile.data_cadastro}} </p>
                                 <div class="row align-items-end">
-                                    <div class="col-lg-5">
-                                        <a href="{%url 'profile_update' %}" class="btn btn-primary btn-user btn-block">Editar perfil</a>
+                                    <div class="col-lg-4">
+                                        <a href="{%url 'profile_update' %}" class="btn btn-warning btn-user btn-block">Editar perfil</a>
                                     </div>
-                                    <div class="col-lg-5 ">
+                                    <div class="col-lg-4">
                                         <div class="text-left">
-                                            <a class="small" href="{% url 'index' %}">Voltar</a>
+                                            <a class="btn btn-danger btn-user btn-block" href="{% url 'password_change' %}">Alterar senha</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 ">
+                                        <div class="text-left">
+                                            <a class="btn btn-primary btn-user btn-block" href="{% url 'index' %}">Voltar</a>
                                         </div>
                                     </div>
                                 </div>

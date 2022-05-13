@@ -6,6 +6,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 <style>
+    .centro{
+        justify-content: center;
+        display: flex;
+    }
 
     .imagem{
         max-height: 600px; 
@@ -24,17 +28,17 @@
 
     @media only screen and (min-width: 1600px) {
     .mobile{ display: inline  !important; }
-    .imagem{width: 100%;height: 600px !important;}
+    .imagem{width: 100%;height: 600px !important; }
     }
 
     @media only screen and (max-width: 800px) {
     .mobile{ display: inline  !important; }
-    .imagem{width: 100%;height: 450px !important;}
+    .imagem{width: 100%;height: 450px !important; }
     }
 
     @media only screen and (max-width: 700px) {
     .mobile{ display: inline  !important; }
-    .imagem{width: 100%;height: 350px !important;}
+    .imagem{width: 100%;height: 350px !important; }
     }
 
     /*<!-- aparecer no mobile --> */
@@ -126,7 +130,7 @@
 </section>
 {% if request.user.is_authenticated %}
     {% if user.profile.idade >= 30 %}
-        <div class="container" style="display: flex; justify-content: center;">
+        <div class="container centro">
             <div class="row" >
             {% include 'turisticos_idosos.html' %}
             {% include 'turisticos_adulto.html' %}
@@ -134,7 +138,7 @@
             </div>
         </div>
     {% elif user.profile.idade > 18 and user.profile.idade < 30 %}
-        <div class="container" style="display: flex; justify-content: center;">
+        <div class="container centro">
             <div class="row" >
                 {% include 'turisticos_adulto.html' %}
                 {% include 'turisticos_idosos.html' %}
@@ -142,7 +146,7 @@
             </div>
         </div>
     {% elif user.profile.idade < 18 %}
-        <div class="container" style="display: flex; justify-content: center;">
+        <div class="container centro" >
             <div class="row" >
                 {% include 'turisticos_infantil.html' %}
                 {% include 'turisticos_adulto.html' %}
@@ -150,14 +154,14 @@
             </div>
         </div>
     {% else %}
-        <div class="container" style="display: flex; justify-content: center;">
+        <div class="container centro">
             <div class="row" >
                 {% include '_pontos_turisticos.html' %}
             </div>
         </div>
     {% endif %}
 {% else %}
-<div class="container" style="display: flex; justify-content: center;">
+<div class="container centro" >
     <div class="row" >
         {% include '_pontos_turisticos.html' %}
     </div>

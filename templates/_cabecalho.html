@@ -18,7 +18,6 @@
     .desktop-hide{ display: none !important; }
     }
 </style>
-
     <header><!-- inicio Cabecalho -->
       <nav class="navbar navbar-expand-sm navbar-light" id="home">
         <div class="container">
@@ -37,15 +36,17 @@
           <div class="collapse navbar-collapse" id="nav-principal"  aria-label="primaria">
             <ul class="navbar-nav ml-auto header-menu">
               <li class="nav-item">
-                <a href="{% url 'index' %}" class="nav-link">Home</a>
+                <a href="{% url 'index' %}" class="nav-link">Home</a> <!-- ESSE METODO USADO PARA CHAMAR A PAGINA NO DJANGO-->
               </li>
-              {% if request.user.is_authenticated %}
+
+              <!-- ESTRUTURA DE DECISAO-->
+              {% if request.user.is_authenticated %} <!-- VERIFICA SE O USUARIO ESTÁ LOGADO-->
                 <li class="nav-item">
-                  <a href="{% url 'profile' %}" class="nav-link"> Perfil</a><!--/precos-->
+                  <a href="{% url 'profile' %}" class="nav-link"> Perfil</a>
                 </li>
-                {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Dono' %}
+                {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Dono' %} <!-- VERIFICA SE O USUARIO ESTÁ NO GRUPOS 'ADMIN' OU 'DONO'-->
                   <li class="nav-item">
-                    <a href="{% url 'cadastrar' %}" class="nav-link">Administração</a>
+                    <a href="{% url 'cadastrar' %}" class="nav-link">Cadastrar</a>
                   </li>
                 {% else %}
                   <li class="nav-item">
