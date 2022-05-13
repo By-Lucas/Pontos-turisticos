@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-3(f%=ix)z_s5_p_8dz@qfp17seic_u5pcdp=d=$*ii^1#v9nh*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS +=[
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware', # CODIGO PARA HOSPEDAR NO HEROKU
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
