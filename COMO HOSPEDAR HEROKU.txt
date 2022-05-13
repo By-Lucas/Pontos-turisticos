@@ -9,7 +9,6 @@ INSTALAR
 PARA FAZER LOGIN NO VISUAL STUDIO COM HEROKU
 heroku login
 
-
 COMANDO PARA CRIAR SESSÃO
 O nome sorteio-lu tem que ser diferente do que ja deve ter
 
