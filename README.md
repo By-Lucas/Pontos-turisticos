@@ -1,5 +1,7 @@
 # Pontos turisticos
 
+<img src="media/image.png" widht="100%">
+
 ## Informações sobre o django
 
 ### Instalar as bibliotedas utilizadas

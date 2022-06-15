@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/places_visits.css' %}">
+
+
+<div class="container" style="display: flex; justify-content: center;">
+    <div class="row" >
+        {% for p_visit in p_visits %}
+            <div class="col-sm" style="margin-bottom: 20px;">
+                <div class="card_imovel">
+                    <a class="a_none" href="{% url 'place_visit' p_visit.id %}">
+                        {% if p_visit.img_cover %}
+                            <img class="img_cover_imovel"  src="{{ p_visit.img_cover.url }}">
+                        {% else %}
+                            <img class="img_cover_imovel"  src="{% static 'image/sem-image.png' %}">
+                        {% endif %}
+                    </a>
+                    <div class="informations_imoveis">
+                        <h5 id="text-limit" class="value" style="display: flex; justify-content: center;">{{p_visit.name}}</h5>
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Owner' %}
+                                    <a href="{% url 'edit_place' p_visit.id %}" style="font-size:18px; width: 40%; margin: 6px; border-radius: 10px;" class="btn btn-primary">Edit</a>
+                                    <a href="{% url 'delete_place' p_visit.id %}" style="font-size:18px; width: 40%; margin: 6px; border-radius: 10px;" class="btn btn-danger">Delete</a>
+                                {% else %}
+                                    <a href="{% url 'place_visit' p_visit.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
+                                    class="btn btn-primary">See Places to Visit</a>
+                                {% endif %}
+                                {% else %}
+                                <a href="{% url 'place_visit' p_visit.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
+                                class="btn btn-primary">See Places to Visit</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

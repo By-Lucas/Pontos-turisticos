@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 {% load bootstrap %}
 
 {% block body %}
@@ -23,18 +23,84 @@
         <div class="card-body p-0">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h1> Atualizar informações do perfil</h1>
+                    <h1> Update Profile</h1>
                     {% csrf_token %}
-                    {{user_form | bootstrap}}
-                    {{profile_form | bootstrap}}
+
+
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                    {% endfor %}
+
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in form.non_field_errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% for field in user_form.visible_fields %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+
+                    {% if user_form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                    {% else %}
+                    <div class="input-group input-group-outline mb-3">
+                    {% render_field field class="form-control" %}
+                    </div>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                {% for field in profile_form.visible_fields %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {% if profile_form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                    {% else %}
+                    <div class="input-group input-group-outline mb-3">
+                    {% render_field field class="form-control" %}
+                    </div>
+                    {% endif %}
+
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-3">
-                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Atualizar" />
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Update" />
                 </div>
                 <div class="col-lg-3">
-                    <a href="{% url 'profile' %}" class="btn btn-secondary btn-user btn-block">Cancelar</a>
+                    <a href="{% url 'profile' %}" class="btn btn-secondary btn-user btn-block">Cancel</a>
                 </div>
             </div>
         </div>

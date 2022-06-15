@@ -7,9 +7,9 @@ from . import views
 # AQUI FICA TODO O COMANDO DE URL DO DJANGO, O QUE CADA BOTAO VAI REDENRIZAR NO (TEMPLATE "HTML")
 # O name É O QUE É CHAMADO NO HTML, por exemplo src="{% url 'profile_update' %}" É RECONHECIDO ASSIM NO HTML
 urlpatterns = [
-    path('register/', views.SignUpView.as_view(), name='register'),
-    path('profile/', views.profileView.as_view(), name='profile'),
-    path('profile/update/', views.ProfileUpdateView.as_view(), name='profile_update'),
+    path('register/', views.Sign_Up_View, name='register'),
+    path('accounts/profile/', views.profileView.as_view(), name='profile'),
+    path('accounts/update/', views.ProfileUpdateView.as_view(), name='profile_update'),
 
     path('password_change/', views.PasswordChangeView.as_view(), name='password_change'),
 

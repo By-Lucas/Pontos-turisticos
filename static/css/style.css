@@ -1,254 +1,255 @@
 * {
-  margin: 0px;
-  padding: 0px;
-}
-body {
-  background: url("https://www.e-presenca.com.br/site/imagens/login/bg_2.png");
-  font-family: "Signika", sans-serif;
-  font-size: 21px;
-}
-
-header {
-  background: #fff;
-  box-shadow: 0px -8px 25px #6d6d6d;
-  /*  position:fixed; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 991;
-}
-
-/* Rodapé
------------------------------*/
-footer {
-	background: #0c5c44;
-	padding: 50px 0px 20px 0px;
-	position: relative;
-}
-
-footer h4 {
-	color: #919496;
-	font-size: 0.8em;
-	text-transform: uppercase;
-}
-
-footer .navbar-nav a {
-	color: white;
-	font-size: 0.8em;
-}
-
-footer .navbar-nav a:hover {
-	color: #bbf8ed;
-	text-decoration: none;
-}
-
-footer ul {
-	list-style: none;
-}
-
-footer ul li {
-	float: right;
-	margin: 0 5px;
-}
-
-
-.menu {
-  display: inline-block;
-  cursor: pointer;
-}
-.main {
-  position: relative;
-  top: 50px;
-  padding-top: 20px;
-}
-aside {
-  margin-top: 0px;
-  width: 70px;
-  background: #fff;
-  padding: 0px 0px 10px 0px;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  min-height: 100vh;
-  box-shadow: 0px 3px 5px #6d6d6d;
-  overflow: hidden;
-  z-index: 99;
-}
-
-aside ul {
-  list-style: none;
-  width: 100%;
-}
-aside ul li {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 20px;
-  position: relative;
-}
-aside ul li a {
-  font-size: 14px;
-  color: #4a4a4a;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  display: inline-block;
-}
-aside ul li a span {
-  display: inline-block;
-  vertical-align: middle;
-  color: #000000;
-  width: 38px;
-}
-article {
-  background: #fff;
-  width: 92%;
-  min-height: 100vh;
-  margin-bottom: 4%;
-  margin-left: 6%;
-  border-radius: 5px;
-  box-shadow: 0px 2px 7px #6d6d6d;
-}
-aside ul li:hover {
-  background: #fff;
-  box-shadow: inset 0px 0px 77px #dedede;
-}
-aside ul li a span.notif {
-  position: absolute;
-  top: 8px;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  right: 10px;
-  background: #343436;
-  line-height: 31px;
-  border-radius: 100%;
-  color: #fff;
-}
-.red {
-  background: #e74c3c !important;
-  box-shadow: 0px 0px 10px #e74c3c;
-}
-.yellow {
-  background: #f1c40f !important;
-  box-shadow: 0px 0px 10px #f1c40f;
-}
-.green {
-  background: #27ae60 !important;
-  box-shadow: 0px 0px 10px #27ae60;
-}
-aside ul li a span.notif.green {
-  width: 10px;
-  height: 10px;
-  color: transparent;
-  right: 5px;
-  transition: all 0.2s ease;
-}
-aside ul li a span.notif.yellow {
-  width: 10px;
-  height: 10px;
-  color: transparent;
-  right: 5px;
-  transition: all 0.2s ease;
-}
-aside ul li a span.notif.red {
-  width: 10px;
-  height: 10px;
-  color: transparent;
-  right: 5px;
-  transition: all 0.2s ease;
-}
-aside ul li:hover a span.notif.red {
-  width: 30px;
-  height: 30px;
-  right: 15px;
-  color: #fff;
-  box-shadow: 0px 0px 60px #e74c3c;
-  top: 10px;
-}
-aside ul li:hover a span.notif.yellow {
-  width: 30px;
-  height: 30px;
-  right: 15px;
-  color: #fff;
-  box-shadow: 0px 0px 60px #f1c40f;
-  top: 10px;
-}
-aside ul li:hover a span.notif.green {
-  width: 30px;
-  height: 30px;
-  right: 15px;
-  color: #fff;
-  box-shadow: 0px 0px 60px #27ae60;
-  top: 10px;
-}
-aside.keep.width {
-  width: 200px;
-}
-aside.keep.width ul li a span.notif {
-  width: 30px;
-  height: 30px;
-  right: 10px;
-  color: #fff;
-  box-shadow: 0px 0px 10px transparent;
-  top: 8px;
-}
-/*  */
-@-webkit-keyframes blinker {
-  from {
-    opacity: 1;
+    margin: 0px;
+    padding: 0px;
   }
-  to {
-    opacity: 0;
+  body {
+    background: url("https://www.e-presenca.com.br/site/imagens/login/bg_2.png");
+    font-family: "Signika", sans-serif;
+    font-size: 21px;
   }
-}
-.blink {
-  text-decoration: blink;
-  -webkit-animation-name: blinker;
-  -webkit-animation-duration: 0.6s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-direction: alternate;
-}
-p.blink.mah {
-  text-align: center;
-  line-height: 25;
-  position: relative;
-}
-p.blink.mah span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 102, 153, 0);
-  top: 248px;
-  left: 360px;
-}
-
-/* parte responsiva */
-@media (max-width: 320px) {
-  article{margin-left: 10px;}
-  aside{ width: 40px ;}
-  .div_main{margin-left: 30px;}
-  aside ul li a{ font-size: 12px;}
-  aside.keep.width{width: 150px;}
+  
+  header {
+    background: #fff;
+    box-shadow: 0px -8px 25px #6d6d6d;
+    /*  position:fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 991;
   }
-
-@media (max-width: 576px) {
-  article{margin-left: 10px;}
-  aside{ width: 40px ;}
-  aside ul li a{ font-size: 12px;}
-  aside.keep.width{width: 150px;}
+  
+  /* Footer ==== Rodapé
+  -----------------------------*/
+  footer {
+      background: #0c5c44;
+      padding: 50px 0px 20px 0px;
+      position: relative;
   }
-
-@media (max-width: 768px) {
-  article{margin-left: 15%;}
-  aside{ width: 60px;}
-  aside ul li a{ font-size: 13px;}
-  aside.keep.width{width: 160px;}
+  
+  footer h4 {
+      color: #919496;
+      font-size: 0.8em;
+      text-transform: uppercase;
   }
-
-@media (max-width: 1280) {
-  .div_main{margin-left: 120px;}
-  aside{ width: 65px;}
-  aside.keep.width{width: 200px;}
+  
+  footer .navbar-nav a {
+      color: white;
+      font-size: 0.8em;
   }
-
-
+  
+  footer .navbar-nav a:hover {
+      color: #bbf8ed;
+      text-decoration: none;
+  }
+  
+  footer ul {
+      list-style: none;
+  }
+  
+  footer ul li {
+      float: right;
+      margin: 0 5px;
+  }
+  
+  
+  .menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .main {
+    position: relative;
+    top: 50px;
+    padding-top: 20px;
+  }
+  aside {
+    margin-top: 0px;
+    width: 70px;
+    background: #fff;
+    padding: 0px 0px 10px 0px;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    min-height: 100vh;
+    box-shadow: 0px 3px 5px #6d6d6d;
+    overflow: hidden;
+    z-index: 99;
+  }
+  
+  aside ul {
+    list-style: none;
+    width: 100%;
+  }
+  aside ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    position: relative;
+  }
+  aside ul li a {
+    font-size: 14px;
+    color: #4a4a4a;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  aside ul li a span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #000000;
+    width: 38px;
+  }
+  article {
+    background: #fff;
+    width: 92%;
+    min-height: 100vh;
+    margin-bottom: 4%;
+    margin-left: 6%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px #6d6d6d;
+  }
+  aside ul li:hover {
+    background: #fff;
+    box-shadow: inset 0px 0px 77px #dedede;
+  }
+  aside ul li a span.notif {
+    position: absolute;
+    top: 8px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    background: #343436;
+    line-height: 31px;
+    border-radius: 100%;
+    color: #fff;
+  }
+  .red {
+    background: #e74c3c !important;
+    box-shadow: 0px 0px 10px #e74c3c;
+  }
+  .yellow {
+    background: #f1c40f !important;
+    box-shadow: 0px 0px 10px #f1c40f;
+  }
+  .green {
+    background: #27ae60 !important;
+    box-shadow: 0px 0px 10px #27ae60;
+  }
+  aside ul li a span.notif.green {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;
+    transition: all 0.2s ease;
+  }
+  aside ul li a span.notif.yellow {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;
+    transition: all 0.2s ease;
+  }
+  aside ul li a span.notif.red {
+    width: 10px;
+    height: 10px;
+    color: transparent;
+    right: 5px;
+    transition: all 0.2s ease;
+  }
+  aside ul li:hover a span.notif.red {
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #e74c3c;
+    top: 10px;
+  }
+  aside ul li:hover a span.notif.yellow {
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #f1c40f;
+    top: 10px;
+  }
+  aside ul li:hover a span.notif.green {
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    color: #fff;
+    box-shadow: 0px 0px 60px #27ae60;
+    top: 10px;
+  }
+  aside.keep.width {
+    width: 200px;
+  }
+  aside.keep.width ul li a span.notif {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    color: #fff;
+    box-shadow: 0px 0px 10px transparent;
+    top: 8px;
+  }
+  /*  */
+  @-webkit-keyframes blinker {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .blink {
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+  }
+  p.blink.mah {
+    text-align: center;
+    line-height: 25;
+    position: relative;
+  }
+  p.blink.mah span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 102, 153, 0);
+    top: 248px;
+    left: 360px;
+  }
+  
+  /* responsive part === parte responsiva */
+  @media (max-width: 320px) {
+    article{margin-left: 10px;}
+    aside{ width: 40px ;}
+    .div_main{margin-left: 30px;}
+    aside ul li a{ font-size: 12px;}
+    aside.keep.width{width: 150px;}
+    }
+  
+  @media (max-width: 576px) {
+    article{margin-left: 10px;}
+    aside{ width: 40px ;}
+    aside ul li a{ font-size: 12px;}
+    aside.keep.width{width: 150px;}
+    }
+  
+  @media (max-width: 768px) {
+    article{margin-left: 15%;}
+    aside{ width: 60px;}
+    aside ul li a{ font-size: 13px;}
+    aside.keep.width{width: 160px;}
+    }
+  
+  @media (max-width: 1280) {
+    .div_main{margin-left: 120px;}
+    aside{ width: 65px;}
+    aside.keep.width{width: 200px;}
+    }
+  
+  
+  

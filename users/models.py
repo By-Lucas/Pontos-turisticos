@@ -9,13 +9,13 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    idade = models.IntegerField(null=True, blank=True, default=0)
-    cidade = models.CharField(max_length=20, null=True, blank=True)
-    contato = models.CharField(max_length=11, null=True, blank=True)
-    data_nascimento = models.DateField(null=True, blank=True)
-    endereco = models.CharField(max_length=60, null=True, blank=True)
-    imagem_perfil = models.ImageField(default='usuario.png', upload_to='users/', null=True, blank=True)
-    data_cadastro = models.DateField(null=True, blank=True, auto_created=True, auto_now=True)
+    age = models.IntegerField(null=True, blank=True, default=0)
+    city = models.CharField(max_length=20, null=True, blank=True)
+    contact = models.CharField(max_length=11, null=True, blank=True)
+    DOB = models.DateField(null=True, blank=True)
+    address = models.CharField(max_length=60, null=True, blank=True)
+    image_profile = models.ImageField(default='user.png', upload_to='users/', null=True, blank=True)
+    date_regist = models.DateField(null=True, blank=True, auto_created=True, auto_now=True)
 
     def __str__(self) :
         return self.user.username # RETORNA NO ADMIN DO DJANGO
@@ -28,8 +28,10 @@ def create_user_profile(sender, instance, created, **kwargs):
     if instance.is_staff:
         try:
             group = Group.objects.get(name='admin')
+            group = Group.objects.get(name='Owner')
         except:
             group = Group.objects.create(name='admin')
+            group = Group.objects.create(name='Owner')
     else:
         try:
             group = Group.objects.get(name='client')

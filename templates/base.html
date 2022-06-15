@@ -3,7 +3,7 @@
 
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en-US">
 <head>
     {% block head %}{% endblock %} <!-- USADO PARA CSS E JS DOS OUTROS TEMPLATES-->
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> <!--CARREGAR CSS E USAR -->
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylelo.css' %}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
@@ -29,18 +29,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous"/>
 
 
-    <title>Turismo{% block title %}{% endblock %}</title> <!--BLOCO DO TITULO, É UTILIZADO O MESMO NOS OUTROS TEMPLATES PARA BUCSAR O TITULO-->
-    <link rel="shortcut icon" type="imagex/png" href="{% static 'image/icon.ico' %}"> <!-- CARREGAR ICON DO SITE-->
+    <title>Turism{% block title %}{% endblock %}</title> <!--BLOCO DO TITULO, É UTILIZADO O MESMO NOS OUTROS TEMPLATES PARA BUCSAR O TITULO-->
+    <link rel="shortcut icon" type="imagex/png" href="{% static 'image/logo.png' %}"> <!-- CARREGAR ICON DO SITE-->
 
 </head>
 <body>
-    {% include '_cabecalho.html' %} <!--BUSCA O HTML E EXTENDE ELE NO BODY-->
+    {% include '_header.html' %} <!--BUSCA O HTML E EXTENDE ELE NO BODY-->
 
     {% block body %}<!-- AQUI INICIA O CONTEUDO DO SITE OU SISTEMA E TUDO QUE ESTIVER DENTRO DO BODY NOS OUTROS TEMPLATES É MOSTRADO AQUI -->
 
     {% endblock %} <!--FINALIZA O BLOCO-->
 
-    {% include 'rodape.html' %} <!-- EXTENDE O HTML BUSCANDO O TEMPLATE-->
+    {% include 'footer.html' %} <!-- EXTENDE O HTML BUSCANDO O TEMPLATE-->
 
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script> <!--CARREGA JAVASCRIPT-->

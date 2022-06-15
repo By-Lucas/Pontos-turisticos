@@ -1,5 +1,3 @@
-# CRIADO AUTOMATICAMENTE PELO DJANGO
-
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
@@ -8,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pontos_turisticos.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'place_visit.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

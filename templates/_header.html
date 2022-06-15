@@ -1,0 +1,74 @@
+{% load static %}
+<style>
+    /* VISUALIZAÇÕES DESKTOP E MOBILE */
+    /*<!-- aparecer no desktop --> */
+    @media only screen and (max-width: 700px) {
+    #nav-principal{ float: right !important; 
+      justify-content: flex-end;}
+    }
+    /*<!-- aparecer no DESKTOP --> */
+    @media only screen and (width: 570px), (min-width: 600px ) {
+      #nav-principal{ float: right !important; 
+                  justify-content: center;
+                  margin-left: 70px;}
+    }
+
+    /*<!-- aparecer no mobile --> */
+    @media only screen and (min-width: 500px) {
+    .desktop-hide{ display: none !important; }
+    }
+</style>
+    <header><!-- inicio Cabecalho -->
+      <nav class="navbar navbar-expand-sm navbar-light" id="home">
+        <div class="container">
+          
+          <div class="row">
+            <a href="{% url 'index' %} " class="col-md-5 align-content-lg-start">
+              <img class="img-fluid" src="{% static 'image/logo.png' %}" width="150px" style="margin-left: -20px; min-width: 150px;">
+            </a>
+          </div>
+          <div class="row">
+          <button class="navbar-toggler d-lg-none ml-auto " data-toggle="collapse" data-target="#nav-principal">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+          <div class="collapse navbar-collapse" id="nav-principal"  aria-label="primary">
+            <ul class="navbar-nav ml-auto header-menu">
+              <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link">Home</a> <!-- ESSE METODO USADO PARA CHAMAR A PAGINA NO DJANGO-->
+              </li>
+
+              <!-- ESTRUTURA DE DECISAO-->
+              {% if request.user.is_authenticated %} <!-- VERIFICA SE O USUARIO ESTÁ LOGADO-->
+                <li class="nav-item">
+                  <a href="{% url 'profile' %}" class="nav-link"> Profile</a>
+                </li>
+                {% if request.user.groups.all.0.name == 'admin' or request.user.groups.all.0.name == 'Owner' %} <!-- VERIFICA SE O USUARIO ESTÁ NO GRUPOS 'ADMIN' OU 'DONO'-->
+                  <li class="nav-item">
+                    <a href="{% url 'register_places' %}" class="nav-link">Register</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a href="" class="nav-link">My Menu</a>
+                  </li>
+                {% endif %}
+              {% endif %}
+              <li class="nav-item">
+                <a href="{% url 'register' %}" class="btn btn_register ">Sign-In</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="btn btn_exit">Exit</a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a href="{% url 'login' %}" class="btn btn_login ">Log-in</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header><!--/fim Cabecalho -->
+    

@@ -58,7 +58,7 @@ class ProfileUpdateView(TemplateView):
         if user_form.is_valid() and profile_form.is_valid(): #VERIFICA SE O FORMULARIO É VALIDO E SE FOR SERÁ SALVO
             user_form.save()
             profile_form.save()
-            messages.add_message(request, constants.SUCCESS, 'Perfil editado com sucesso!')
+            messages.add_message(request, constants.SUCCESS, 'Profile successfully edited!')
             return redirect(reverse_lazy('profile')) #AQUI É A PAGINA PRA ONDE O USUARIO VAI SER DIRECIONADO
         context = {
             'user_form':user_form,
@@ -71,6 +71,22 @@ class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('index')
     template_name = 'register.html'
+
+
+def Sign_Up_View(request):
+    form = SignUpForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, constants.SUCCESS, 'New user Sucess Register!')
+            return redirect('index')
+        else:
+            messages.add_message(request, constants.ERROR, 'Erro New user Register!')
+            return redirect('register')
+    context = {
+        'form':form
+    }
+    return render(request, 'register.html', context)
 
 # ALTERAR SENHA
 class PasswordChangeView(auth_views.PasswordChangeView):

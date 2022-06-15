@@ -1,4 +1,3 @@
-
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -18,9 +17,6 @@ class UserForm(forms.ModelForm):
         ]
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False, help_text="Opcional")
-    last_name = forms.CharField(max_length=30, required=False, help_text="Opcional")
-    email = forms.EmailField(max_length=120, help_text="Digite seu endereço de email")
 
     class Meta:
         model = User
@@ -33,19 +29,46 @@ class SignUpForm(UserCreationForm):
             'password2'
         ]
 
+        error_messagens = {
+            "username": {
+                "required": "Enter the username."
+            },
+            "first_name": {
+                "required": "Enter the last name."
+            },
+            "last_name": {
+                "required": "Enter the last name."
+            },
+            "email": {
+                "required": "Enter the email."
+            },
+            "password1": {
+                "required": "Enter the password."
+            },
+            "password2": {
+                "required": "confirm password."
+            },
+
+        }
+
 class ProfileForm(forms.ModelForm):
+    DOB = forms.DateField(required=False, widget=forms.TextInput(
+            attrs={
+                'class':'form-control','placeholder': 'Date 0000/00/00'
+            }
+        ))
     class Meta:
         model = Profile
         fields = [
-            'idade',
-            'cidade',
-            'endereco',
-            'contato',
-            'data_nascimento',
-            'imagem_perfil',
+            'age',
+            'city',
+            'address',
+            'contact',
+            'DOB',
+            'image_profile',
             #'data_cadastro'
         ]
 
-    #def __init__(self, *args, **kwargs):
-    #    super().__init__(*args, **kwargs)
-    #    self.fields['data_cadastro'].widget = forms.DateInput(format="%d/%m/%Y")
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['DOB'].widget = forms.DateInput(format="%d/%m/%Y")

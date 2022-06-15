@@ -1,0 +1,243 @@
+:root {
+    --bg-primary: #151515;
+    --bg-second: rgba(24, 24, 24,70);
+    --primary: linear-gradient(#44D374, #32F484);
+    --second: #fff;
+    --terciary: #32F484;
+    --html-color: #FF6D00;
+    --css-color: #039BE5;
+    --js-color: #FFD600;
+    --flutter-color: #40C4FF;
+
+}
+
+
+/* Section Projetos */
+/* Section Projects */
+
+#projects {
+    display: inline-block;
+    justify-content: center;
+}
+
+
+.projects {
+    display: inline-block;
+    margin: 15px;
+    width: auto;
+    justify-content: center;
+    
+}
+
+
+.box-product{
+    background: linear-gradient(45deg, #d1e0e0, #a4f3db);
+    border: 1px solid rgb(78, 78, 78);
+    border-bottom: 4px rgb(151, 34, 187) solid;
+    box-shadow: 0px 2px 15px #6d6d6d;
+    border-radius: 10px;
+    margin: 0px 20px  10px;
+}
+
+.title-box{
+    align-items: center;
+    padding: 3px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.card_imovel{
+    background: linear-gradient(45deg, #57ca66, #21a333);
+    margin-top: 5px;
+    border-radius: 26px;
+    max-width: 250px;
+    max-height: 400px;
+    box-shadow: 0px 2px 15px #6d6d6d;
+    align-items: center;
+}
+.card_imovel:hover{
+    background: linear-gradient(45deg, #52c561, #20af33);
+	transform: scale(1.0); 
+    box-shadow: 0 2px 15px rgba(14, 204, 55, 0.6);
+	text-decoration: none;
+
+}
+
+.img_cover_imovel{
+    width: 250px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 260px;
+    min-height: 260px;
+}
+
+
+.informations_imoveis{
+    padding: 20px;
+    color: white;
+}
+
+
+.projects-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-card {
+    border-radius: 15px;
+    flex: 1;
+    background-color: var(--bg-second);
+    margin: 10px;
+    justify-content: center;
+    overflow: hidden;
+    border: #151515 solid 3px;
+}
+
+.projects-card img{
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+
+.project-card-desc {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    margin-bottom: 5px;
+    padding: 10px 0px 10px 10px;
+    
+}
+
+.icon{
+    font-size: 2.0rem;
+    cursor: pointer;
+    color: green;
+    float: right;
+    margin-top: 10px;
+}
+.icon:hover{
+    color: var(--html-color);
+}
+
+.project-card-desc-right-icons a:hover{
+    color: var(--html-color);
+}
+
+.project-card-desc-left {
+    flex: 1;
+    width: 100%;
+    
+}
+
+
+.project-card-desc-category.html {
+    border: 2px solid var(--html-color);    
+    background-color: rgba(255, 111, 0, 0.25);
+}
+
+.project-card-desc-category.css {
+    border: 2px solid var(--css-color);    
+    background-color: rgba(3, 155, 229,0.25);
+}
+
+.project-card-desc-category.javascript {
+    border: 2px solid var(--js-color);    
+    background-color: rgba(255, 214, 0,0.25);
+}
+
+.project-card-desc-category.flutter {
+    border: 2px solid var(--flutter-color);    
+    background-color: rgba(64, 196, 255, 0.25);
+    
+}
+
+.button_1{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #02812d;
+    color: #ffffff;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 1rem;
+    text-align: center;
+    float: left;
+}
+.button_1:hover{
+    text-decoration: none;
+    background: #006d24;
+    color: #ffffff;
+}
+/*   VISIBLE ========  VISIVEL ================================ */
+@media (max-width: 1112px) {
+
+    .banner-right img {
+        width: 90%;
+    }
+
+    .banner-right {
+        width: 90%;
+        justify-content: end;
+    }
+
+
+@media (max-width: 834px) {
+    
+
+    #projects  {
+        padding: 0px 0px;
+    }
+
+    .banner-right{
+        display: none;
+    }
+    .banner-left {
+        text-align: center;
+    }
+    .above-me-right {
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    .above-me-right p {
+        max-width: 1000px;
+    }
+
+    .knowledge-cards {
+        flex-direction: column;
+    }
+
+    .project-card-desc {
+        display: block;
+    }
+
+    .projec-card-desc p{
+        margin-top: 30px;
+    }
+
+    .banner-esquerda p{
+        margin: auto;
+    }
+
+    .icone-rolagem {
+        display: none;
+    }
+
+}
+
+@media (max-width: 414px) {
+
+    .projec-card-desc {
+        display: block;
+    }
+
+    .projec-card-desc p{
+        margin-top: 30px;
+    }
+
+}
+}
