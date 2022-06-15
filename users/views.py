@@ -79,10 +79,10 @@ def Sign_Up_View(request):
         if form.is_valid():
             form.save()
             messages.add_message(request, constants.SUCCESS, 'New user Sucess Register!')
-            return redirect('index')
+            return redirect(reverse_lazy('login'))
         else:
             messages.add_message(request, constants.ERROR, 'Erro New user Register!')
-            return redirect('register')
+            return redirect(reverse_lazy('register'))
     context = {
         'form':form
     }
