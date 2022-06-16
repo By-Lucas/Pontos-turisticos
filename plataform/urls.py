@@ -11,7 +11,8 @@ urlpatterns = [
     path('delete-place/<int:id>/', views.delete_place_visit, name='delete_place'),
     path('edit-place/<int:id>/', views.TurismUpdateView.as_view(), name='edit_place'),
     path('place-visit/<int:id>/', views.place_visit_, name='place_visit'),
-    path('add-image/', views.add_image_slider, name='add-image')
+    path('add-image/', views.add_image_slider, name='add-image'),
+    path('delte-image/<int:id>/', views.delete_image, name='delete_image')
 ]
 
 if settings.DEBUG:

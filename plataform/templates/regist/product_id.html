@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  {{product.product_name}}
+{% endblock %}
+
+{% block conteudo %}
+<style>
+  .title{
+    margin-bottom: -25px;
+  }
+  .margin_main{
+    margin-bottom: -50px;
+  }
+</style>
+<div id="bicycle">
+  <!--enctype="multipart/form-data"-->
+  <form method="POST"  action="{% url 'my_product' product.id %}">
+    {% csrf_token %}
+    <main>
+      <div>
+        <div class="title container">
+          <h1 class="font-1-xxl text-">{{product.product_name}}<span class="cor-p1">.</span></h1>
+          <h2 class="font-1-xl" style="color: green;">R$ {{product.product_value}},00</h2>
+        </div>
+      </div>
+      <div class="bicicleta container margin_main">
+        <div class="bicycle-images">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner"  style="height: 540px;">
+              {% for img in product.product_images.all %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}" >
+                  <img class="d-block w-100 img-fluid"  style="height: 500px;" src="{{img}}" alt="First slide">
+                </div>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="bicycle-content">
+          <p class="font-2-l">{{product.product_descricao}}</p>
+          <div class="row clearfix">
+            <div class="col_half">
+            <label>O que pode Despoletar a Crise/Descompensação</label>
+            <div class="textarea_field"> <span><i aria-hidden="true" class="fa fa-comment"></i></span>
+            <textarea style="padding-left:35px" class="form-control area" readonly="true">1
+              {{product.product_descricao}}
+            </textarea>
+            </div>
+            </div>
+            </div>
+            </form>
+          <div class="bicycle-buy">
+            <button class="button" type="submit">Buy it now</button>
+
+            <span class="font-1-xs cor-6"><img src="../img/icons/delivery.svg" alt=""> 7 days guarantee</span>
+            <span class="font-1-xs cor-6"><img src="../img/icons/stock.svg" alt=""> {{product.product_available}} Available</span>
+          </div>
+
+        </div>
+      </div>
+    
+        </div>
+    </main>
+  </form> 
+
+<article class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h2 class="font-1-xl cor-10">Informations</h2>
+      <ul class="bicycle-informations">
+        <li>
+          <img src="../img/icons/eletric.svg" alt="">
+          <h3 class="font-1-m cor-0">Status</h3>
+          {% if product.product_status == 'A' %}
+          <p class="font-2-xs cor-5">Available</p>
+          {% elif product.product_status == 'I' %}
+          <p class="font-2-xs cor-5">In Update</p>
+          {% elif product.product_status == 'U' %}
+          <p class="font-2-xs cor-5">Unavailable</p>
+          {% endif %}
+        </li>
+        <li>
+          <img src="../img/icons/speed.svg" alt="">
+          <h3 class="font-1-m cor-0">Payment</h3>
+          {% if product.payment_time == 'M' %}
+          <p class="font-2-xs cor-5">Monthly</p>
+          {% elif product.payment_time == 'Q' %}
+          <p class="font-2-xs cor-5">quarterly</p>
+          {% elif product.payment_time == 'Y' %}
+          <p class="font-2-xs cor-5">Yearly</p>
+          {% elif product.payment_time == 'L' %}
+          <p class="font-2-xs cor-5">Lifetime</p>
+          {% endif %}
+        </li>
+        <li>
+          <img src="../img/icons/tracker.svg" alt="">
+          <h3 class="font-1-m cor-0">Category</h3>
+          <p class="font-2-xs cor-5">{{product.product_caregory}}</p>
+        </li>
+        <li>
+          <img src="../img/icons/carbono.svg" alt="">
+          <h3 class="font-1-m cor-0">Suporte</h3>
+          <p class="font-2-xs cor-5">{{product.product_dia_suporte}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm">
+      <h2 class="font-1-xl cor-10">Pagamento</h2>
+      <ul class="bicycle-informacoes">
+        <li>
+          <img style="width: 150px; height:100%" src="{{product.product_pix.url}}" alt="">
+        </li>
+        <li>
+          <h3 class="font-1-m cor-0">CÓDIGO PIX:</h3>
+          <h3 class="font-4-xs cor-2">{{product.product_pix_codigo}}</h3>
+        </li>
+      </ul>
+    </div>
+  </article>
+<!--
+  <article class="container">
+    <div class="row">
+      <div class="col-sm">
+        <ul class="bicycle-ficha font-2-s cor-4">
+          <h2 class="font-1-xl cor-10">Passo a passo</h2>
+          <p>basta escolher qual product deseja adquirir</p>
+          <li>1: Efetuar o cadastro no sistema <a class="text-success" href="{% url 'login' %}">"Clique aqui para se cadastrar"</a> </li>
+          <li>2: Fazer o pagamento (Pix) ou (Cartão de cédito)</li>
+          <li>3: Anexar o comprovante do product ou pode enviar print do product e comprovante para 74981199190</li>
+          <li>4: Dentro de 24 horas receberá o product escolhido no email ou whatsapp</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+-->
+  <article class="bicycles-lista container">
+    <h2 class="font-1-xxl">Outros products<span class="cor-p1">.</span></h2>
+    <ul>
+      {% for sugestao in sugestoes %}
+      <li class="col-md-4">
+        <a href="{% url 'product_id' sugestao.id %}">
+          {% if sugestao.product_img %}
+            <img class="bicycles-imagem img fluid" style="height: 300px; width: 100%;" src="{{ sugestao.product_img.url }}" alt="bicycle preta">
+          {% else %}
+            <img class="bicycles-imagem img fluid" style="height: 300px; width: 100%;" src="{% static 'media/git/dev.gif' %}" alt="bicycle preta">
+          {% endif %}
+          <h3 class="font-1-xl">{{sugestao.product_nome}}</h3>
+          <span class="font-2-m cor-8">R$ {{sugestao.product_valor}},00</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </article>
+
+</div>
+{% endblock conteudo %}

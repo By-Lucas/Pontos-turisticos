@@ -2,7 +2,6 @@
 
 # # Create your views here.
 
-from multiprocessing import context
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -46,9 +45,15 @@ def add_image_slider(request):
     form = ImagesSliderForm(request.POST, request.FILES)
     if request.method =='POST':
         if form.is_valid():
-            form.save()
-            messages.add_message(request, constants.SUCCESS, 'Image add!')
-            return redirect('add-image')
+            form.save(commit=False)
+            image = request.FILES.get("images")
+            if image == '' or image == None:
+                messages.add_message(request, constants.ERROR, 'Select Image!')
+                return redirect('add-image')
+            else:
+                form.save()
+                messages.add_message(request, constants.SUCCESS, 'Image add!')
+                return redirect('add-image')
         else:
             messages.add_message(request, constants.ERROR, 'Erro New image!')
             return redirect(request, 'add-image')
@@ -58,6 +63,14 @@ def add_image_slider(request):
     }
     return render(request, 'regist/add-image.html',context)
 
+@login_required
+def delete_image(request, id=None):
+    image_remove = get_object_or_404(image_slider_place, id=id)
+    if request.method == "POST": 
+        image_remove.delete()
+        messages.add_message(request, constants.SUCCESS, "Image Success Removed") #client removed
+        return redirect('add-image')
+    return render(request, 'regist/delete_image.html',{'image_remove':image_remove})
 
 @login_required
 def register_place_visit(request):

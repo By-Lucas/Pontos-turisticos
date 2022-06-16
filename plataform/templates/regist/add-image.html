@@ -71,17 +71,25 @@
             <a class="btn btn-primary col-md-4" href="{% url 'register_places' %}"> Back</a>
         </div>
     </form>
-    <div class="row">
-        <div class="sm">
+    <div class="row"  style="justify-content: center; display: flex;">
+        
             <br>
             {% if all_img %}
                 {% for img in all_img %}
-                    <img class="img_cover_imovel"  src="{{ img.images.url }}" width="200px">
+                    {% if img.images %}
+                    <div class="sm">
+                        <img class="img_cover_imovel" style="margin: 10px 5px;"  src="{{ img.images.url }}" width="180px" height="180px">
+                        <a href="{% url 'delete_image' img.id %}" class="btn btn-outline-danger" style="justify-content: center; display: flex; margin: 0px 10px;">
+                            Delete image
+                        </a>
+                    </div>
+                     {% endif %}
                 {% endfor %}
             {% else %}
-                <h2>Not images</h2>
+                <h2>No image</h2>
             {% endif %}
-        </div>
+            
+        
     </div>
 </div>
 

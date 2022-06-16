@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap %} <!--MODEL GOT ON SITE = https://django-crispy-forms.readthedocs.io/en/latest/filters.html-->
+{% block body %}
+<div class="container" style="min-height: 80vh; margin-top: 50px;">
+<!-- use on action form always post method-->
+    <h1>Are You Sure You Want To Delete This image  {{ place_remove.name }}?</h1>
+    <form action="" method="post"> {% csrf_token %} <!-- Need to have to add and send to db-->
+        <div class="text-center">
+        <input type="submit" class="btn btn-outline-danger col-md-3" value="Delete">
+        <a href="{% url 'add-image' %}" class="btn btn-outline-primary col-md-3">Back</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
